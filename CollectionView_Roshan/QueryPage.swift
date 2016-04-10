@@ -60,7 +60,7 @@ class QueryViewController: UIViewController{
             
 
             
-            print(1)
+           
            
             
             
