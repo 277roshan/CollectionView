@@ -1,0 +1,6 @@
+framework module Pods_CollectionView_Roshan {
+  umbrella header "Pods-CollectionView_Roshan-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -8,11 +8,15 @@
 
 import UIKit
 import Social
+import Firebase
 
 class MainViewController: UIViewController{
     
     var image_select = UIImage();
+    var name_player = NSString();
     var datePicker = UIDatePicker()
+    let firebase = Firebase(url:"https://277roshan.firebaseio.com/profiles")
+    
     
     @IBOutlet var detailImageOutlet: UIImageView!
     
@@ -112,4 +116,50 @@ extension MainViewController {
         dateTextField.text = strDate
         dateTextField.resignFirstResponder()
     }
+}
+
+//Saving to firebase and querying from database
+extension MainViewController{
+    
+    @IBAction func save(sender: AnyObject) {
+        
+        let date = dateTextField.text
+        var data: NSData = NSData()
+        
+        if let image = detailImageOutlet.image {
+            data = UIImageJPEGRepresentation(image,0.1)!
+        }
+        
+        let base64String = data.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+        
+        let user: NSDictionary = ["name":name_player,"date":date!, "photoBase64":base64String]
+        
+        //add firebase child node
+        let profile = firebase.ref.childByAppendingPath(name_player as String)
+        
+        // Write data to Firebase
+        profile.setValue(user)
+        
+        print("Data has been saved")
+    }
+    
+  
+    @IBAction func query(sender: AnyObject) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        firebase.observeEventType(.Value, withBlock: { snapshot in
+            var tempItems = [NSDictionary]()
+            
+            for item in snapshot.children {
+                let child = item as! FDataSnapshot
+                let dict = child.value as! NSDictionary
+                tempItems.append(dict)
+            }
+            
+            print(tempItems)
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        })
+    }
+    
+    
 }

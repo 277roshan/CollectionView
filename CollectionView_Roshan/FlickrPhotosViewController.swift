@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class FlickrPhotosViewController : UICollectionViewController {
     
     
@@ -58,6 +60,7 @@ extension FlickrPhotosViewController {
             let indexPath = collectionView!.indexPathForCell(cell)
             
             svc.image_select = self.soccer_images[(indexPath?.row)!]!
+            svc.name_player = self.searches[(indexPath?.row)!]
         }
     }
     
