@@ -188,13 +188,6 @@
                                     <action selector="save:" destination="uoU-If-IhS" eventType="touchUpInside" id="DhZ-F4-uIQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OwG-gP-9bb">
-                                <rect key="frame" x="57" y="543" width="83" height="30"/>
-                                <state key="normal" title="Make Query"/>
-                                <connections>
-                                    <action selector="query:" destination="uoU-If-IhS" eventType="touchUpInside" id="oZn-Z4-d5v"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
