@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jO7-LG-Omb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Leicester City FC for the Dream EPL Title-->
+        <scene sceneID="ZBQ-qr-sqC">
+            <objects>
+                <collectionViewController modalTransitionStyle="crossDissolve" id="dJZ-mb-yxz" customClass="FlickrPhotosViewController" customModule="CollectionView_Roshan" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="B6Y-Li-EZu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="23F-sw-EfO">
+                            <size key="itemSize" width="214" height="171"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrCell" id="LhU-mW-6i6" customClass="FlickrCellViewController" customModule="CollectionView_Roshan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="214" height="171"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="214" height="171"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tn-Ml-OpB">
+                                            <rect key="frame" x="20" y="142" width="174" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="kJ9-YQ-Lji"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uid-At-OYV">
+                                            <rect key="frame" x="13" y="20" width="164" height="105"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.79921630310000003" green="1" blue="0.86665104370000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.96024040089999996" green="1" blue="0.98716236440000005" alpha="0.25878232759999997" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="7Tn-Ml-OpB" firstAttribute="top" secondItem="LhU-mW-6i6" secondAttribute="topMargin" constant="134" id="DMw-nQ-k7e"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="7Tn-Ml-OpB" secondAttribute="trailing" constant="12" id="Tvn-eC-eDx"/>
+                                    <constraint firstItem="7Tn-Ml-OpB" firstAttribute="leading" secondItem="LhU-mW-6i6" secondAttribute="leadingMargin" constant="12" id="WYF-zJ-KNd"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="LabelOutlet" destination="7Tn-Ml-OpB" id="CzD-XY-Coq"/>
+                                    <outlet property="imageOutlet" destination="uid-At-OYV" id="qkl-bm-r8A"/>
+                                    <outlet property="labelOutlet" destination="7Tn-Ml-OpB" id="leU-BE-mWe"/>
+                                    <segue destination="uoU-If-IhS" kind="show" identifier="mainview" id="8eF-DW-itZ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="dJZ-mb-yxz" id="gBg-ZI-U9r"/>
+                            <outlet property="delegate" destination="dJZ-mb-yxz" id="tcW-dT-Qul"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Leicester City FC for the Dream EPL Title" id="gmm-xB-0x4"/>
+                    <connections>
+                        <outlet property="CustomCollection" destination="B6Y-Li-EZu" id="970-aC-PUN"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6j-Me-J91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989" y="358"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="Wwv-Is-ghL">
+            <objects>
+                <viewController id="uoU-If-IhS" customClass="MainViewController" customModule="CollectionView_Roshan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rOD-fH-lhZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="onn-tz-sjo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WDC-eN-rqq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYe-Vn-td4">
+                                <rect key="frame" x="62" y="175" width="250" height="250"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aIQ-EV-PQ8">
+                                <rect key="frame" x="14" y="94" width="250" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eh6-N9-jv8">
+                                <rect key="frame" x="294" y="94" width="102" height="30"/>
+                                <state key="normal" title="Pick Birth Date"/>
+                                <connections>
+                                    <action selector="datePickerBtnClicked:" destination="uoU-If-IhS" eventType="touchUpInside" id="xfo-8q-cDl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aq9-f7-L66">
+                                <rect key="frame" x="62" y="447" width="131" height="30"/>
+                                <state key="normal" title="Share Date of Birth"/>
+                                <connections>
+                                    <action selector="shareText:" destination="uoU-If-IhS" eventType="touchUpInside" id="2jK-NU-mBp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIy-IN-KnQ">
+                                <rect key="frame" x="57" y="480" width="261" height="30"/>
+                                <state key="normal" title="Share image and birthdayon facebook"/>
+                                <connections>
+                                    <action selector="facebookOnlySharePushed:" destination="uoU-If-IhS" eventType="touchUpInside" id="yXw-Py-Jhr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="dateTextField" destination="aIQ-EV-PQ8" id="c1U-zM-FI9"/>
+                        <outlet property="detailImageOutlet" destination="QYe-Vn-td4" id="yCg-yu-X6B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1H8-xT-8Yo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1745" y="358"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bzV-gl-9Bv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jO7-LG-Omb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jal-9H-JT3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dJZ-mb-yxz" kind="relationship" relationship="rootViewController" id="e1c-LC-dgj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GyK-qJ-4VB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="177" y="358"/>
+        </scene>
+    </scenes>
+</document>

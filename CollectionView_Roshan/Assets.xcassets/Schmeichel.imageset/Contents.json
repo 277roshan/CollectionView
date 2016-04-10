@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "Leicester-Leicester-City-Nigel-Pearson-Leicester-v-Everton-Everton-Roberto-Martinez-Everton-FC-Kasper-Schmeichel-559473.jpg",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "Leicester-Leicester-City-Nigel-Pearson-Leicester-v-Everton-Everton-Roberto-Martinez-Everton-FC-Kasper-Schmeichel-559474.jpg",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "Leicester-Leicester-City-Nigel-Pearson-Leicester-v-Everton-Everton-Roberto-Martinez-Everton-FC-Kasper-Schmeichel-559475.jpg",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
