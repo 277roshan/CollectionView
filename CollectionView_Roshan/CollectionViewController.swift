@@ -10,15 +10,17 @@ import UIKit
 import Firebase
 
 
-class FlickrPhotosViewController : UICollectionViewController {
+class CollectionViewController : UICollectionViewController {
     
+    //Mark: Outlets
     
     @IBOutlet var CustomCollection: UICollectionView!
   
-   let baseRef = Firebase(url:"https://277roshan.firebaseio.com")
     
-
     
+    //Defining variables and constants
+    
+    let baseRef = Firebase(url:"https://277roshan.firebaseio.com")
     private let reuseIdentifier = "FlickrCell"
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     private var searches = ["Vardy", "Mahrez", "Okazaki", "Schmeichel",  "Kante"]
@@ -26,37 +28,18 @@ class FlickrPhotosViewController : UICollectionViewController {
     let apiKey = "a49c3228fa879647b6e279e8fdcf52b0"
     
     
-    
     override func viewDidLoad() {
-        
-       
-            
-            baseRef.authUser("roshanthapalia@gmail.com", password: "roshan", withCompletionBlock: { (error, authData) -> Void in
-                let authData = authData
-                print(authData)
-                
-            })
-        
-        
-        
-        
-        
-        
-        
     }
     
     @IBAction func LogoutFirebase(sender: AnyObject) {
         baseRef.unauth()
-        
-        
     }
 }
 
+//Collection View Part
 
 
-
-
-extension FlickrPhotosViewController {
+extension CollectionViewController {
     //1
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1

@@ -87,7 +87,7 @@
         <!--Leicester-->
         <scene sceneID="ZBQ-qr-sqC">
             <objects>
-                <collectionViewController modalTransitionStyle="crossDissolve" id="dJZ-mb-yxz" customClass="FlickrPhotosViewController" customModule="CollectionView_Roshan" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController modalTransitionStyle="crossDissolve" id="dJZ-mb-yxz" customClass="CollectionViewController" customModule="CollectionView_Roshan" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="B6Y-Li-EZu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

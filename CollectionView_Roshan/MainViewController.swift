@@ -12,16 +12,17 @@ import Firebase
 
 class MainViewController: UIViewController{
     
+    // Defining variables and constants
+    
     var image_select = UIImage();
     var name_player = NSString();
     var datePicker = UIDatePicker()
     let ref = Firebase(url:"https://277roshan.firebaseio.com")
     let firebase = Firebase(url:"https://277roshan.firebaseio.com/profiles")
     
+    //Mark: Outlets
     
     @IBOutlet var detailImageOutlet: UIImageView!
-    
-    
     
     @IBOutlet var dateTextField: UITextField!
   
@@ -31,6 +32,8 @@ class MainViewController: UIViewController{
         initializeDatePicker()
         
     }
+    
+    // Mark: Actions
     
     @IBAction func shareText(sender: UIButton) {
         let activityViewController = UIActivityViewController(
@@ -59,6 +62,8 @@ class MainViewController: UIViewController{
     
 }
 
+
+// DatePicker Part
 
 extension MainViewController {
     
@@ -119,8 +124,14 @@ extension MainViewController {
     }
 }
 
+
+
+
 //Saving to firebase and querying from database
+
 extension MainViewController{
+    
+    // Mark: Actions
     
     @IBAction func save(sender: AnyObject) {
         

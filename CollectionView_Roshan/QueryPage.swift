@@ -11,17 +11,16 @@ import Firebase
 
 class QueryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
+    // Defining variables and constants
+    
     let ref = Firebase(url:"https://277roshan.firebaseio.com")
     let firebase = Firebase(url:"https://277roshan.firebaseio.com/profiles")
-    
     var tempItems: [NSDictionary] = []
     var tempItems2: [NSDictionary] = []
-   let section:[String] = ["Public","Private"]
+    let section:[String] = ["Public","Private"]
     var items:[AnyObject] = [[],[]]
-    
-    //let section = ["pizza", "deep dish pizza", "calzone"]
-    
-    //let items = [["Margarita", "BBQ Chicken", "Pepperoni"], ["sausage", "meat lovers", "veggie lovers"], ["sausage", "chicken pesto", "prawns", "mushrooms"]]
+   
+    // Mark: Outlets
     
     @IBOutlet var TableViewOutlet: UITableView!
    
@@ -31,9 +30,6 @@ class QueryViewController: UIViewController, UITableViewDataSource, UITableViewD
         TableViewOutlet.delegate = self
         TableViewOutlet.dataSource = self
         query()
-        
-        
-        
     }
     
 
@@ -42,20 +38,14 @@ class QueryViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         return self.section [section]
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          print(tempItems.count)
         //print(tempItems)
         return self.items [section ].count
-        
-       
     }
-    
-   
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = TableViewOutlet.dequeueReusableCellWithIdentifier("firstCell", forIndexPath: indexPath) as! TableCellController
@@ -67,14 +57,9 @@ class QueryViewController: UIViewController, UITableViewDataSource, UITableViewD
         let decodedData = NSData(base64EncodedString: imagea as! String, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
         let decodedImage = UIImage(data:decodedData!)
         cell.PlayerImage.image = decodedImage
-        
-        
-
-        
         return cell
     }
     
-   
     
     func query() {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -88,12 +73,8 @@ class QueryViewController: UIViewController, UITableViewDataSource, UITableViewD
                 self.tempItems.append(dict)
             }
             
-        self.items[0] = self.tempItems
-        
-            
+            self.items[0] = self.tempItems
             //print(self.tempItems)
-            
-            
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         })
         
@@ -110,24 +91,12 @@ class QueryViewController: UIViewController, UITableViewDataSource, UITableViewD
                 self.tempItems2.append(dict)
                 
             }
-            
-            print(self.tempItems2)
-            
+            //print(self.tempItems2)
             self.items[1] = (self.tempItems2)
-            
-            
-            
             //print(self.tempItems)
-            
             self.TableViewOutlet.reloadData()
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             
         })
-
-        
-        
-        
-        
-        
-            }
+    }
 }

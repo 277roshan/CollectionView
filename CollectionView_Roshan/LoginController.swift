@@ -11,8 +11,10 @@ import Firebase
 class LoginController: UIViewController{
     
     
+    //Defining constants
     let ref = Firebase(url: "https://277roshan.firebaseio.com")
     
+    //Mark: Outlets
     
     @IBOutlet var UserName: UITextField!
     
@@ -31,9 +33,10 @@ class LoginController: UIViewController{
         })
     }
 
+   
+    //Mark: Actions
     
-    
-@IBAction func SignUpAction(sender: AnyObject) {
+    @IBAction func SignUpAction(sender: AnyObject) {
         
         let user_name = UserName.text
         let password = Password.text
@@ -47,8 +50,6 @@ class LoginController: UIViewController{
                     print("Successfully created user account with uid: \(uid)")
                 }
         })
-
-        
     }
     
     
@@ -71,7 +72,4 @@ class LoginController: UIViewController{
 
  
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) { }
-    
-    
-    
 }

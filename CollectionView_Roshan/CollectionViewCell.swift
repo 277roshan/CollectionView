@@ -11,11 +11,10 @@ import UIKit
 
 class FlickrCellViewController: UICollectionViewCell{
     
+    //Mark: Outlets
+    
     @IBOutlet var labelOutlet: UILabel!
     
     @IBOutlet var imageOutlet: UIImageView!
-    
-    
-    
     
 }
