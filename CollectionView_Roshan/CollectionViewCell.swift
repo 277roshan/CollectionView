@@ -16,4 +16,6 @@ class FlickrCellViewController: UICollectionViewCell{
     @IBOutlet var imageOutlet: UIImageView!
     
     
+    
+    
 }

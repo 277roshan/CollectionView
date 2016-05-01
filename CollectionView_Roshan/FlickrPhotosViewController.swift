@@ -7,14 +7,17 @@
 //
 
 import UIKit
-
+import Firebase
 
 
 class FlickrPhotosViewController : UICollectionViewController {
     
     
     @IBOutlet var CustomCollection: UICollectionView!
+  
+   let baseRef = Firebase(url:"https://277roshan.firebaseio.com")
     
+
     
     private let reuseIdentifier = "FlickrCell"
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
@@ -22,7 +25,35 @@ class FlickrPhotosViewController : UICollectionViewController {
     private var soccer_images = [UIImage(named: "Vardy"), UIImage(named: "Mahrez"), UIImage(named: "Okazaki"), UIImage(named: "Schmeichel"), UIImage(named: "Kante")]
     let apiKey = "a49c3228fa879647b6e279e8fdcf52b0"
     
+    
+    
+    override func viewDidLoad() {
+        
+       
+            
+            baseRef.authUser("roshanthapalia@gmail.com", password: "roshan", withCompletionBlock: { (error, authData) -> Void in
+                let authData = authData
+                print(authData)
+                
+            })
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    @IBAction func LogoutFirebase(sender: AnyObject) {
+        baseRef.unauth()
+        
+        
+    }
 }
+
+
+
 
 
 extension FlickrPhotosViewController {

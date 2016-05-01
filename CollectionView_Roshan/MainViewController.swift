@@ -15,6 +15,7 @@ class MainViewController: UIViewController{
     var image_select = UIImage();
     var name_player = NSString();
     var datePicker = UIDatePicker()
+    let ref = Firebase(url:"https://277roshan.firebaseio.com")
     let firebase = Firebase(url:"https://277roshan.firebaseio.com/profiles")
     
     
@@ -142,6 +143,36 @@ extension MainViewController{
         
         print("Data has been saved")
     }
+    
+    
+    @IBAction func PrivateSave(sender: AnyObject) {
+        let date = dateTextField.text
+        var data: NSData = NSData()
+        
+        if let image = detailImageOutlet.image {
+            data = UIImageJPEGRepresentation(image,0.1)!
+        }
+        
+        let base64String = data.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+        
+        let user: NSDictionary = ["name":name_player,"date":date!, "photoBase64":base64String]
+        
+        //add firebase child node
+        
+        let privatedata = "https://277roshan.firebaseio.com/private/" + ref.authData.uid
+        
+        let privateSave = Firebase(url:privatedata)
+        
+        
+        let profile = privateSave.ref.childByAppendingPath(name_player as String)
+        
+        // Write data to Firebase
+        profile.setValue(user)
+        
+        print("Data has been saved")
+        
+    }
+
     
   
     @IBAction func query(sender: AnyObject) {
